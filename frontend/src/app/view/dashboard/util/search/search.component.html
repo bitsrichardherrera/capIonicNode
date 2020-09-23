@@ -1,0 +1,14 @@
+<div>
+
+    <div class="content">
+        <ion-input type="number" placeholder="Buscar por número" [(ngModel)]="searchValue">
+        </ion-input>
+        <ion-button (click)="search()">
+            <ion-icon name="search-outline"></ion-icon>
+        </ion-button>
+        <div *ngFor="let item of data">
+            <p>{{ item.amount }}</p>
+        </div>
+    </div>
+
+</div>

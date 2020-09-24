@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, SimpleChanges  } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { AlertController } from '@ionic/angular';
 
@@ -9,15 +9,20 @@ import { AlertController } from '@ionic/angular';
 })
 export class SearchComponent implements OnInit {
   @Input() public data: any[] ;
+  @Input() public idDefault = '';
   public searchNumber: string;
+
   constructor(private http: HttpService, public alertCtrl: AlertController) { }
 
   ngOnInit() {
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    this.searchById(this.idDefault);
+  }
+
   async presentAlert() {
     const alert = await this.alertCtrl.create({
-      // cssClass: 'my-custom-class',
       header: 'Vacio',
       message: 'No hay coincidencias.',
       buttons: ['OK']
@@ -26,14 +31,23 @@ export class SearchComponent implements OnInit {
     await alert.present();
   }
   public search(){
-    console.log(this.searchNumber);
     this.http.getSearchNumber(this.searchNumber).subscribe((resp: any) => {
-    console.log(resp.data);
     if (resp.data.length >= 1){
-      this.data = resp.data;
+      this.data = resp.data ;
     }else{
       this.presentAlert();
     }
   });
+  }
+  public viewData(id: string){
+    this.searchById(id);
+  }
+
+  private searchById(id){
+    if (id) {
+      this.http.getCuentaId(id).subscribe((resp: any) => {
+        // this.data = [resp.data];
+      });
+    }
   }
 }

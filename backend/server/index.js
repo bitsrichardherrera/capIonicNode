@@ -32,4 +32,15 @@ server.get("/api/technology/search/:line_number", async(req, res) => {
     return res.send({ error: false, data: technologies });
 });
 
+server.delete("/api/technology/:id", (req, res) => {
+    const { id } = req.params;
+    Technology.findById(id, (err, Technology) => {
+        if (err) res.status(500).send({ message: `Error al pagar la cuenta: ${err}` })
+        Technology.remove(err => {
+            if (err) res.status(500).send({ message: `Error al pagar la cuenta: ${err}` })
+            res.status(200).send({ message: `La cuenta ha sido pagada` })
+        });
+    })
+});
+
 module.exports = server;

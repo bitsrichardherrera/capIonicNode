@@ -13,3 +13,7 @@ ion-toolbar.header {
 ion-toolbar.background.footer {
     margin-top: 100px;
 }
+
+ion-header {
+    z-index: 9999;
+}

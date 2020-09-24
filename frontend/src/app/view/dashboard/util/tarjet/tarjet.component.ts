@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tarjet',
@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tarjet.component.scss'],
 })
 export class TarjetComponent implements OnInit {
-
+  @Input() public data: any[];
   constructor() { }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+  }
 }

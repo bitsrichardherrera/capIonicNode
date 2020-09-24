@@ -8,13 +8,15 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class HomePage implements OnInit {
   public data: any[] ;
+  public idDefault: string;
 
   constructor(private http: HttpService) {}
 
   ngOnInit() {
     this.http.getTelephones()
     .subscribe( (resp: any) => {
-      this.data = resp.data;
+      this.idDefault = resp.data[0]._id;
+      this.data = resp.data ;
     });
   }
 

@@ -11,32 +11,32 @@ const technologies = [{
         last_payment_date: "12/08/2019",
         payment_reference: 234422498,
         invoice_status: "Vencida",
-        amount: 124.000,
+        amount: 124000,
         currency: "$",
         country_mobile_code: 57,
         payment_history: [{
                 period: "08 Jun 2019 al 08 de Jul de 2019",
-                amount: 30.000,
+                amount: 30000,
                 balance: 200
             },
             {
                 period: "08 Abr 2019 al 08 de May de 2019",
-                amount: 30.000,
+                amount: 30000,
                 balance: 150
             },
             {
                 period: "08 Jul 2019 al 08 de Ago de 2019",
-                amount: 30.000,
+                amount: 30000,
                 balance: 0
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 34.000,
+                amount: 34000,
                 balance: 4
             },
             {
                 period: "08 May 2019 al 08 de Jun de 2019",
-                amount: 32.600,
+                amount: 32600,
                 balance: 50
             }
         ]
@@ -48,32 +48,32 @@ const technologies = [{
         last_payment_date: "12/08/2019",
         payment_reference: 234422438,
         invoice_status: "Por pagar",
-        amount: 256.000,
+        amount: 256000,
         currency: "$",
         country_mobile_code: 57,
         payment_history: [{
                 period: "08 Jun 2019 al 08 de Jul de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 110
             },
             {
                 period: "08 Abr 2019 al 08 de May de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 150
             },
             {
                 period: "08 Jul 2019 al 08 de Ago de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 0
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 54.000,
+                amount: 54000,
                 balance: 4
             },
             {
                 period: "08 May 2019 al 08 de Jun de 2019",
-                amount: 52.600,
+                amount: 52600,
                 balance: 50
             }
         ]
@@ -85,27 +85,27 @@ const technologies = [{
         last_payment_date: "12/08/2019",
         payment_reference: 233322498,
         invoice_status: "Vencida",
-        amount: 200.000,
+        amount: 200000,
         currency: "$",
         country_mobile_code: 57,
         payment_history: [{
                 period: "08 Jun 2019 al 08 de Jul de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 110
             },
             {
                 period: "08 Abr 2019 al 08 de May de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 150
             },
             {
                 period: "08 Jul 2019 al 08 de Ago de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 0
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 54.000,
+                amount: 54000,
                 balance: 4
             }
         ]
@@ -117,27 +117,27 @@ const technologies = [{
         last_payment_date: "12/08/2019",
         payment_reference: 211122498,
         invoice_status: "por pagar",
-        amount: 200.000,
+        amount: 200000,
         currency: "$",
         country_mobile_code: 57,
         payment_history: [{
                 period: "08 Jun 2019 al 08 de Jul de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 110
             },
             {
                 period: "08 Abr 2019 al 08 de May de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 150
             },
             {
                 period: "08 Jul 2019 al 08 de Ago de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 0
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 54.000,
+                amount: 54000,
                 balance: 4
             }
         ]
@@ -149,42 +149,42 @@ const technologies = [{
         last_payment_date: "12/08/2019",
         payment_reference: 219999498,
         invoice_status: "vencida",
-        amount: 550.000,
+        amount: 550000,
         currency: "$",
         country_mobile_code: 57,
         payment_history: [{
                 period: "08 Jun 2019 al 08 de Jul de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 110
             },
             {
                 period: "08 Abr 2019 al 08 de May de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 150
             },
             {
                 period: "08 Jul 2019 al 08 de Ago de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 0
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 50.000,
+                amount: 50000,
                 balance: 6
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 100.000,
+                amount: 100000,
                 balance: 5
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 100.000,
+                amount: 100000,
                 balance: 8
             },
             {
                 period: "08 Mar 2019 al 08 de Abr de 2019",
-                amount: 150.000,
+                amount: 150000,
                 balance: 9
             }
         ]

@@ -14,4 +14,10 @@ export class HttpService {
   getTelephones(){
     return this.http.get(`${URL}/api/technologies`);
   }
+  getCuentaId(id){
+    return this.http.get(`${URL}/api/technology/${id}`);
+  }
+  getSearchNumber( data ){
+    return this.http.get(`${URL}/api/technology/search/${data}`);
+  }
 }

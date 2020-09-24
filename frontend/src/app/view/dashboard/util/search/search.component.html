@@ -1,14 +1,20 @@
-<div>
-
-    <div class="content">
-        <ion-input type="number" placeholder="Buscar por número" [(ngModel)]="searchValue">
+<div class="content">
+    <div class="inputSearch">
+        <ion-input type="number" placeholder="Buscar por número" [(ngModel)]="searchNumber">
         </ion-input>
-        <ion-button (click)="search()">
+        <ion-button class="button" (click)="search()">
             <ion-icon name="search-outline"></ion-icon>
         </ion-button>
-        <div *ngFor="let item of data">
-            <p>{{ item.amount }}</p>
-        </div>
     </div>
 
+    <div class="card">
+        <div class="cardContent" *ngFor="let item of data">
+            <div class="description"> (+{{item.country_mobile_code}}) {{ item.line_number }}
+                <div>{{item.invoice_status }}</div>
+            </div>
+            <div class="description">{{item.currency}} {{item.amount}}
+                <div>{{item.expiration_date}}</div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -7,22 +7,22 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  public searchValue: string;
-  public data: any[] = [];
-
-  constructor( private http: HttpService) { }
+  @Input() public data: any[] ;
+  public searchNumber: string;
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
-    this.http.getTelephones()
-    .subscribe( (resp: any) => {
-      this.data.push(resp.data);
-    });
-    console.dir(this.data);
   }
 
   public search(){
-    console.log(
-      this.searchValue
-    );
+    console.log(this.searchNumber);
+    this.http.getSearchNumber(this.searchNumber).subscribe((resp: any) => {
+    console.log(resp.data);
+    if (resp.data.length >= 1){
+      console.log('hay data');
+    }else{
+      console.log('ERROR');
+    }
+  });
   }
 }

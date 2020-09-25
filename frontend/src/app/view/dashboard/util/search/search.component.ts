@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { AlertController } from '@ionic/angular';
+import { DataJson } from 'src/app/core/interfaces/interfaces';
 
 @Component({
   selector: 'app-search',
@@ -8,8 +9,8 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit , OnChanges {
-  @Input() public data: any[];
-  @Input() public datalocal: any[];
+  @Input() public data: DataJson[];
+  @Input() public datalocal: DataJson[];
   @Input() public idDefault: string;
   private idSearchReal: any;
   public searchNumber: string;

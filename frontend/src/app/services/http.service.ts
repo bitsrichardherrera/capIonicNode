@@ -20,4 +20,7 @@ export class HttpService {
   getSearchNumber( data ){
     return this.http.get(`${URL}/api/technology/search/${data}`);
   }
+  deleteCuentaId(id){
+    return this.http.delete(`${URL}/api/technology/${id}`);
+  }
 }

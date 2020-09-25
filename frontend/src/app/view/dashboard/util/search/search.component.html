@@ -12,10 +12,11 @@
 
                 <div class="card">
                     <div class="cardContent" *ngFor="let item of data" (click)="viewData(item._id)">
-                        <div class="description"> (+{{item.country_mobile_code}}) {{ item.line_number }}
-                            <div>{{item.invoice_status }}</div>
+                        <div class="description"> (+{{item.country_mobile_code}}) {{ item.formatted_line_number }}
+                            <div class="{{item.invoice_status}}">{{item.invoice_status | uppercase}}</div>
                         </div>
-                        <div class="description">{{item.currency}} {{item.amount}}
+                        <div class="description">
+                            <div class="amount">{{item.currency}} {{item.amount}}</div>
                             <div>{{item.expiration_date}}</div>
                         </div>
                     </div>

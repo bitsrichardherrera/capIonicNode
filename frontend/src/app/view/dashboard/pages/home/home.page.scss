@@ -17,3 +17,9 @@ ion-toolbar.background.footer {
 ion-header {
     z-index: 9999;
 }
+
+.ionRow {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}

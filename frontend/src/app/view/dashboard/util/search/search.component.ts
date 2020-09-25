@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, SimpleChanges  } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { AlertController } from '@ionic/angular';
 
@@ -7,9 +7,11 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
 })
-export class SearchComponent implements OnInit {
-  @Input() public data: any[] ;
-  @Input() public idDefault = '';
+export class SearchComponent implements OnInit , OnChanges {
+  @Input() public data: any[];
+  @Input() public datalocal: any[];
+  @Input() public idDefault: string;
+  private idSearchReal: any;
   public searchNumber: string;
 
   constructor(private http: HttpService, public alertCtrl: AlertController) { }
@@ -17,8 +19,11 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    this.searchById(this.idDefault);
+  ngOnChanges(cambios: SimpleChanges) {
+    if (this.idDefault !== undefined) {
+      this.idSearchReal = this.idDefault;
+      this.searchById2(this.idSearchReal);
+    }
   }
 
   async presentAlert() {
@@ -30,24 +35,26 @@ export class SearchComponent implements OnInit {
 
     await alert.present();
   }
-  public search(){
+  public search() {
     this.http.getSearchNumber(this.searchNumber).subscribe((resp: any) => {
-    if (resp.data.length >= 1){
-      this.data = resp.data ;
-    }else{
-      this.presentAlert();
-    }
-  });
+      if (resp.data.length >= 1) {
+        this.data = resp.data;
+      } else {
+        this.presentAlert();
+      }
+    });
   }
-  public viewData(id: string){
+  public viewData(id: string) {
     this.searchById(id);
   }
-
-  private searchById(id){
-    if (id) {
-      this.http.getCuentaId(id).subscribe((resp: any) => {
-        // this.data = [resp.data];
+  private searchById2(id) {
+    this.http.getCuentaId(id).subscribe((resp: any) => {
+        this.datalocal = resp.data;
       });
     }
+    private searchById(id) {
+      this.http.getCuentaId(id).subscribe((resp: any) => {
+        this.datalocal = resp.data;
+      });
   }
 }
